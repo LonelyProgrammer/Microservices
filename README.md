@@ -6,10 +6,10 @@ I started this project after seeing all the fuss about microservices, especially
 
 # Technical Stuff
 The project has the following dependencies:
-Python 2.7
-Cassandra 3.10
-Django Framework 1.11.16
-Django REST Framework 3.8.2
+Python 2.7,
+Cassandra 3.10,
+Django Framework 1.11.16,
+Django REST Framework 3.8.2,
 django-cassandra-engine 1.5.4 
 
 # Pledge
