@@ -7,14 +7,27 @@ I started this project after seeing all the fuss about microservices, especially
 # Technical Stuff
 The project has the following dependencies:
 Python 2.7,
+
 Cassandra 3.10,
+
 Django Framework 1.11.16,
+
 Django REST Framework 3.8.2,
+
 django-cassandra-engine 1.5.4 
+
+# Important Links
+https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1
+
+
+https://www.slothparadise.com/how-to-install-and-use-cassandra-on-django/
 
 # Pledge
 I shall comment all the vital sections of my code so that all the newbies (like me) can understand it without the aid of any tutorial.
+
 I shall continue enhancing this project,so that everyone can use it independent of platform.
+
 I shall make this project scalable and robust.
+
 **Controversial** I shall continue to hate JAVA and promote PYTHON.
 
