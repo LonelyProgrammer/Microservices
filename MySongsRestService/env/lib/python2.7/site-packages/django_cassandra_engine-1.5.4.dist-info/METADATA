@@ -1,0 +1,146 @@
+Metadata-Version: 2.0
+Name: django-cassandra-engine
+Version: 1.5.4
+Summary: Django Cassandra Engine - the Cassandra backend for Django
+Home-page: http://github.com/r4fek/django-cassandra-engine
+Author: Rafał Furmański
+Author-email: r.furmanski@gmail.com
+License: 2-clause BSD
+Download-URL: https://github.com/r4fek/django-cassandra-engine/tarball/master
+Keywords: django cassandra engine backend driver wrapper database nonrel cqlengine
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Environment :: Plugins
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Database
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: Django (>=1.10,<3)
+Requires-Dist: cassandra-driver (<3.20,>=3.13)
+Requires-Dist: six (>=1.6)
+
+Django Cassandra Engine - the Cassandra backend for Django
+==========================================================
+
+All tools you need to start your journey with Apache Cassandra and
+Django Framework!
+
+|Latest version| |CI| |Donate|
+
+Features
+--------
+
+-  integration with latest ``python-driver`` and optionally
+   ``dse-driver`` from DataStax
+-  working ``flush``, ``migrate``, ``sync_cassandra``, ``inspectdb`` and
+   ``dbshell`` commands
+-  support for creating/destroying test database
+-  accepts all ``Cqlengine`` and ``cassandra.cluster.Cluster``
+   connection options
+-  automatic connection/disconnection handling
+-  works well along with relational databases (as secondary DB)
+-  storing sessions in Cassandra
+-  working django forms
+-  usable admin panel with Cassandra models
+
+Plans (TODO)
+------------
+
+-  User model stored in Cassandra (auth module)
+
+Installation
+------------
+
+Recommended installation:
+
+::
+
+    pip install django-cassandra-engine
+
+Basic Usage
+-----------
+
+1. Add ``django_cassandra_engine`` to ``INSTALLED_APPS`` in your
+   ``settings.py`` file:
+
+   ::
+
+       INSTALLED_APPS = ('django_cassandra_engine',) + INSTALLED_APPS
+
+2. Change ``DATABASES`` setting:
+
+   ::
+
+       DATABASES = {
+           'default': {
+               'ENGINE': 'django_cassandra_engine',
+               'NAME': 'db',
+               'TEST_NAME': 'test_db',
+               'HOST': 'db1.example.com,db2.example.com',
+               'OPTIONS': {
+                   'replication': {
+                       'strategy_class': 'SimpleStrategy',
+                       'replication_factor': 1
+                   }
+               }
+           }
+       }
+
+3. Define some model:
+
+   ::
+
+       # myapp/models.py
+
+       import uuid
+       from cassandra.cqlengine import columns
+       from django_cassandra_engine.models import DjangoCassandraModel
+
+       class ExampleModel(DjangoCassandraModel):
+           example_id    = columns.UUID(primary_key=True, default=uuid.uuid4)
+           example_type  = columns.Integer(index=True)
+           created_at    = columns.DateTime()
+           description   = columns.Text(required=False)
+
+4. Run ``./manage.py sync_cassandra``
+5. Done!
+
+Documentation
+-------------
+
+The documentation can be found online
+`here <http://r4fek.github.io/django-cassandra-engine/>`__.
+
+Donation
+--------
+
+If this project help you reduce time to develop, you can give me a cup
+of coffee :)
+
+|Donate|
+
+License
+-------
+
+Copyright (c) 2014-2018, `Rafał
+Furmański <https://rafal-furmanski.com>`__.
+
+All rights reserved. Licensed under BSD 2-Clause License.
+
+.. |Latest version| image:: https://img.shields.io/pypi/v/django-cassandra-engine.svg
+   :target: https://pypi.python.org/pypi/django-cassandra-engine/
+.. |CI| image:: https://api.travis-ci.org/r4fek/django-cassandra-engine.svg?branch=master
+   :target: https://travis-ci.org/r4fek/django-cassandra-engine
+.. |Donate| image:: https://img.shields.io/badge/Donate-PayPal-green.svg
+   :target: https://www.paypal.me/rrafek/5
+
+
