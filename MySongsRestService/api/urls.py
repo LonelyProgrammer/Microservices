@@ -17,6 +17,7 @@ from django.conf.urls import url,include
 from django.contrib import admin
 
 urlpatterns = [
-    # url(r'^admin/', admin.site.urls),
-    url(r'api/(?P<version>(v1|v2))/', include('music.urls'))
+    # url(r'^admin/', admin.site.urls),#Cassandra does not support the admin mode
+    # url(r'api/(?P<version>(v1|v2))/', include('music.urls'))
+    url(r'^', include('music.urls'))
 ]
