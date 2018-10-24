@@ -10,7 +10,7 @@ from django_cassandra_engine.models import DjangoCassandraModel
 # Create your models here.
 class Songs(DjangoCassandraModel):
     ## Song_id
-    song_id = columns.UUID(primary_key=True, default=uuid.uuid4)
+    song_id = columns.Integer(primary_key=True)
     # song title
     title = columns.Text(required=False) ## - This is the Cassandra version
     ##title = models.CharField(max_length=255, null=False) ## - This is the sqlite version
