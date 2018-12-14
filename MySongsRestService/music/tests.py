@@ -8,20 +8,29 @@ from rest_framework.test import APITestCase, APIClient
 from rest_framework.views import status
 from .models import Songs
 from .serializers import SongsSerializer
+##This is done to test the user of our api
+from django.contrib.auth.models import User
 
 ##------------
 # Create your tests here.
+
 class BaseViewTest(APITestCase):
     ##""This api test create endpoint for songs ""
     @staticmethod
-    def createSongObject(title="", artist="",song_id = ""):
-        if (title != "" and artist != "" and song_id == "") :
-            Songs.objects.create(song_id=song_id,title=title,artist=artist)
+    def createSongObject(title="", artist="",song_id = "",user = ""):
+        if (title != "" and artist != "" and song_id == "" and user = "") :
+            Songs.objects.create(song_id=song_id,title=title,artist=artist,owner=user)
 
     def setUp(self):
         # add test data
+        user = User.objects.create(username="nerd")
+        # -----Initialize client and force it to use authentication----
+        self.client = APIClient()
+        self.client.force_authenticate(user=user)
+        ##-----------------
         self.create_song = {'song_id':'1','title':'Kathys Song', 'artist':'Simon and Gurfunkel'}
-        self.createSongObject('Kathys Song','Simon and Gurfunkel',1)
+        self.createSongObject('Kathys Song','Simon and Gurfunkel',1,user)
+        self.createSongObject = 
         self.response = self.client.post(
             reverse('create'),
             self.create_song,
@@ -40,6 +49,14 @@ class GetAllSongsTest(BaseViewTest):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         #self.assertContains(response, expectedSong)
+
+    ## Unit test to check if the authorisation is enforced    
+    def test_authorization_is_enforced(self):
+        """Test that the api has user authorization."""
+        new_client = APIClient()
+        res = new_client.get('/bucketlists/', kwargs={'pk': 2}, format="json")
+        self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
+
     
     def test_api_can_update_songs(self):
         ###"""Test the api can update a given bucketlist."""

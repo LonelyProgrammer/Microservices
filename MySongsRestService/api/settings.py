@@ -25,7 +25,7 @@ SECRET_KEY = 'evfir(gv1v1dgn-j35)@&$42u&st_p+&d76%tssj0ad(75op%3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0','localhost']
 
 
 # Application definition

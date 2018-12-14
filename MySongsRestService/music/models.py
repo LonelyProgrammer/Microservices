@@ -18,7 +18,15 @@ class Songs(DjangoCassandraModel):
     # name of artist or group/band
     artist = columns.Text(required=False)
     #artist = models.CharField(max_length=255, null=False)
-
     def __str__(self):
         ##"""Return a human readable representation of the model instance."""
         return "{} - {} - {}".format(self.song_id,self.title, self.artist)
+
+class Owner(DjangoCassandraModel):
+    ##Add an owner to this api
+    owner = columns.Text(required=True)
+    def __str__(self):
+        ##"""Return a human readable representation of the model instance."""
+        return "{}".format(self.owner)
+
+     
