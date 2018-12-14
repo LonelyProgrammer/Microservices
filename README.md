@@ -2,7 +2,7 @@
 Investigating the lifecycle of Microservices
 
 # History
-I started this project after seeing all the fuss about microservices, especially the spring boot microservice framework. The place I work in have developers who have a Phd degree and now they code in Java Spring boot. A part of me always wanted to prove that simple things do work better than complex airy things.This prompted me to use python and REST to build a scalable, robust microservice to add,update and delete songs and artists.This is a work in progress and this is the first time I am creating a microservice of my own. The purpose of this project is to learn from scratch.
+I started this project after seeing all the fuss about microservices, especially the spring boot microservice framework. A part of me always wanted to prove that simple things do work better than complex airy things.This prompted me to use python and REST to build a scalable, robust microservice to add,update and delete songs and artists.This is a work in progress and this is the first time I am creating a microservice of my own. The purpose of this project is to learn from scratch.
 
 # Development Platform
 
