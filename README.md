@@ -28,8 +28,17 @@ django-cassandra-engine 1.5.4
 # Important Links
 https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1
 
-
 https://www.slothparadise.com/how-to-install-and-use-cassandra-on-django/
+
+# Roadblocks encountered and solution:
+So after writing the project in Django the issue was deploying the service to AWS.
+However I was not very keen on managing the operations part viz. spinning up clusters and EC2 instances etc. so I decided to go serverless(https://aws.amazon.com/lambda/serverless-architectures-learn-more/) with AWS api gateway and AWS lambda(https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
+I was lucky to have found AWS Chalice which just did the job for me (https://chalice.readthedocs.io/en/latest/)
+
+# Using AWS chalice to move to the AWS cloud:
+I had to scrap out the Django project tat I had created, and I started with the following tutorial:
+https://medium.com/richcontext-engineering/creating-a-serverless-blog-with-chalice-bdc39b835f75
+I however keep the Django project for reference in this site.
 
 # Pledge
 I shall comment all the vital sections of my code so that all the newbies (like me) can understand it without the aid of any tutorial.
