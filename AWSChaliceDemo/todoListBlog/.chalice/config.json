@@ -1,9 +1,12 @@
 {
   "stages": {
     "dev": {
+      "environment_variables": {
+        "APP_TABLE_NAME": "todo-app-7dd4157c-16cf-4ad6-b94f-6306c95ba903"
+      },
       "api_gateway_stage": "api"
     }
   },
   "version": "2.0",
-  "app_name": "todoListBlog"
+  "app_name": "mytodo"
 }
