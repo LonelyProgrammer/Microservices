@@ -59,7 +59,7 @@ I am however keeping the Django project for reference in this site.
 
 5. This will give you a JWT token
 
-6.Use the JWT token in command line or POSTMAN to hit the GET/POST/PUT/DELETE apis e.g. http https://55w26nfmg5.execute-api.eu-west-1.amazonaws.com/api/todos Authorization:<Replace your JWT token here>
+6.Use the JWT token in command line or POSTMAN to hit the GET/POST/PUT/DELETE apis e.g. http https://55w26nfmg5.execute-api.eu-west-1.amazonaws.com/api/todos Authorization:""""Replace your JWT token here""""
 
 # Pledge
 I shall comment all the vital sections of my code so that all the newbies (like me) can understand it without the aid of any tutorial.
