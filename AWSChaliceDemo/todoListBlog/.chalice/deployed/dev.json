@@ -2,14 +2,19 @@
   "schema_version": "2.0",
   "resources": [
     {
-      "role_name": "todoListBlog-dev",
-      "role_arn": "arn:aws:iam::119810545119:role/todoListBlog-dev",
+      "role_name": "mytodo-dev",
+      "role_arn": "arn:aws:iam::119810545119:role/mytodo-dev",
       "name": "default-role",
       "resource_type": "iam_role"
     },
     {
-      "lambda_arn": "arn:aws:lambda:eu-west-1:119810545119:function:todoListBlog-dev",
+      "lambda_arn": "arn:aws:lambda:eu-west-1:119810545119:function:mytodo-dev",
       "name": "api_handler",
+      "resource_type": "lambda_function"
+    },
+    {
+      "lambda_arn": "arn:aws:lambda:eu-west-1:119810545119:function:mytodo-dev-jwt_auth",
+      "name": "jwt_auth",
       "resource_type": "lambda_function"
     },
     {
