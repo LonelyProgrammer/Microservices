@@ -6,9 +6,9 @@ I started this project after seeing all the fuss about microservices, especially
 
 # Development Platform
 
-IDE - Visual Studio Code Version 1.28.2 
+1. IDE - Visual Studio Code Version 1.28.2 
 
-MAC OS 10.14
+2. MAC OS 10.14
 
 # Technical Stuff
 The project has the following dependencies:
@@ -26,12 +26,12 @@ The project has the following dependencies:
 
 7.PyJWT 1.6.1
 
-AWS Chalice 1.6.1
+8.AWS Chalice 1.6.1
 
 # Important Links
-https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1
+1. https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1
 
-https://www.slothparadise.com/how-to-install-and-use-cassandra-on-django/
+2. https://www.slothparadise.com/how-to-install-and-use-cassandra-on-django/
 
 # Roadblocks encountered and solution:
 So after writing the project in Django the issue was deploying the service to AWS.
@@ -58,6 +58,12 @@ I am however keeping the Django project for reference in this site.
 5. This will give you a JWT token
 
 6.Use the JWT token in command line or POSTMAN to hit the GET/POST/PUT/DELETE apis e.g. http https://55w26nfmg5.execute-api.eu-west-1.amazonaws.com/api/todos Authorization:""""Replace your JWT token here""""
+
+# Taking this further:
+1.Create a CI/CD pipleine for this project preferably using Jenkins
+2.Create a front end web application to consume these microservices pereferably in Angular JS
+3.Log all the logs from these microservices into elastic search perferably using Kibana
+4.Configure alerts from elastic search to deliver alert messages to Slack
 
 # Pledge
 I shall comment all the vital sections of my code so that all the newbies (like me) can understand it without the aid of any tutorial.
