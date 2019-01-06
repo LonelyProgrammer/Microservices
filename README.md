@@ -60,9 +60,12 @@ I am however keeping the Django project for reference in this site.
 6.Use the JWT token in command line or POSTMAN to hit the GET/POST/PUT/DELETE apis e.g. http https://55w26nfmg5.execute-api.eu-west-1.amazonaws.com/api/todos Authorization:""""Replace your JWT token here""""
 
 # Taking this further:
-1.Create a CI/CD pipleine for this project preferably using Jenkins
+1.Create a CI/CD pipleine for this project preferably using Jenkins (Also try to use AWS CodePipeline)
+
 2.Create a front end web application to consume these microservices pereferably in Angular JS
+
 3.Log all the logs from these microservices into elastic search perferably using Kibana
+
 4.Configure alerts from elastic search to deliver alert messages to Slack
 
 # Pledge
