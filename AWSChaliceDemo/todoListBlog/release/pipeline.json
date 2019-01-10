@@ -73,7 +73,7 @@
           "Fn::GetAtt": "CodeBuildRole.Arn"
         },
         "Source": {
-          "BuildSpec": "version: 0.1\nphases:\n  install:\n    commands:\n      - sudo pip install --upgrade awscli\n      - aws --version\n      - sudo pip install 'chalice>=1.6.0,<1.7.0'\n      - sudo pip install -r 'boto3==1.9.65'\n  - sudo pip install -r 'PyJWT==1.6.1'\n    - chalice package /tmp/packaged\n      - aws cloudformation package --template-file /tmp/packaged/sam.json --s3-bucket ${APP_S3_BUCKET} --output-template-file transformed.yaml\nartifacts:\n  type: zip\n  files:\n    - transformed.yaml\n",
+          "BuildSpec": "version: 0.1\nphases:\n  install:\n    commands:\n      - sudo pip install --upgrade awscli\n      - aws --version\n      - sudo pip install 'chalice>=1.6.0,<1.7.0'\n      - sudo pip install -r requirements.txt\n      - chalice package /tmp/packaged\n      - aws cloudformation package --template-file /tmp/packaged/sam.json --s3-bucket ${APP_S3_BUCKET} --output-template-file transformed.yaml\nartifacts:\n  type: zip\n  files:\n    - transformed.yaml\n",
           "Type": "CODEPIPELINE"
         }
       }
