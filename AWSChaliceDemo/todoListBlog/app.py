@@ -10,6 +10,7 @@ app.debug = True
 _DB = None
 _USER_DB = None
 
+## Initialize the DB
 def get_app_db():
     global _DB
     if _DB is None:
